@@ -2,19 +2,10 @@
 @{
     /**/
 
-    Layout = null;
+    Layout = "~/Views/Shared/Layout.cshtml" ;
     List<ECommerce.Models.Produto> produtos = ViewBag.Produtos;
 }
-
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Gerenciamento de Produtos</title>
-</head>
-<body>
-
+<div>
     <h1>Gerenciamento de Produtos</h1>
 
     @*<a href="~/Views/Produto/Cadastrar">Cadastrar Produto</a>*@  @*CTRL + C + K = Comentar linha*@
@@ -22,14 +13,16 @@
     @* Link em MVC | Razor *@
     @Html.ActionLink("Cadastrar", "Cadastrar", "Produto")
 
-    <div>
-        <table>
+    <table class="table table-hover">
+        <thead>
             <tr>
                 <th>Nome</th>
                 <th>Descrição</th>
                 <th>Preço</th>
                 <th>Categoria</th>
             </tr>
+        </thead>
+        <tbody>
             @foreach (var produto in produtos)
             {
                 <tr>
@@ -38,11 +31,16 @@
                     <td>@produto.Preco</td>
                     <td>@produto.Categoria</td>
 
-                    <td>@Html.ActionLink("Remover", "Remover", "Produto", new { id = produto.ProdutoID }, null)</td>
-                    <td>@Html.ActionLink("Alterar", "Alterar", "Produto", new { id = produto.ProdutoID }, null)</td>
+                    <td>@Html.ActionLink("Remover", "Remover", "Produto", new { id = produto.ProdutoID }, new { @class = "btn btn-danger" })</td>
+                    <td>@Html.ActionLink("Alterar", "Alterar", "Produto", new { id = produto.ProdutoID }, new { @class = "btn btn-warning" })</td>
                 </tr>
             }
-        </table>
-    </div>
-</body>
-</html>
+        </tbody>
+
+    </table>
+
+    <p>Dados atualizados às : <b>@DateTime.Now</b></p>
+
+    <
+</div>
+

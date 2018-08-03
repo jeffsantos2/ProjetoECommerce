@@ -1,6 +1,6 @@
 ﻿
 @{
-    Layout = null;
+    Layout ="~/Views/Shared/Layout.cshtml";
 }
 
 <!DOCTYPE html>
@@ -16,21 +16,24 @@
 
     @using (Html.BeginForm())
     {
-        <div>
-            @Html.Label("Nome do Produto: ")
-            @Html.TextBox("txtNome")<br>
+        <fieldset>
 
-            @Html.Label("Descrição do Produto: ")
-            @Html.TextBox("txtDescricao")<br>
+            @Html.Label("Nome do Produto: ", "Nome do Produto", new { @class = "form-group" })
+            @Html.TextBox("txtNome", null , new { @class = "form-control" })<br>
 
-            @Html.Label("Preço do Produto: ")
-            @Html.TextBox("txtPreco")<br>
+            @Html.Label("Descricao do Produto: ", "Descricao do Produto", new { @class = "form-group" })
+            @Html.TextBox("txtDescricao", null, new { @class = "form-control" })<br>
 
-            @Html.Label("Categoria do Produto: ")
-            @Html.TextBox("txtCategoria")<br>
+            @Html.Label("Preco do Produto: ", "Preco do Produto", new { @class = "form-group" })
+            @Html.TextBox("txtPreco", null, new { @class = "form-control" })<br>
+
+            @Html.Label("Categoria do Produto: ", "Categoria do Produto", new { @class = "form-group" })
+            @Html.TextBox("txtCategoria", null, new { @class = "form-control" })<br>
+
 
             <input type="submit" value="Cadastrar" />
-        </div>
+
+        </fieldset>
     }
 
 </body>
