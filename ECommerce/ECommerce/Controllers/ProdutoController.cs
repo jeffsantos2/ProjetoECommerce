@@ -1,4 +1,5 @@
-﻿using ECommerce.Models;
+﻿using ECommerce.DAL;
+using ECommerce.Models;
 using System;
 using System.Linq;
 using System.Web.Mvc;
@@ -7,12 +8,12 @@ namespace ECommerce.Controllers
 {
     public class ProdutoController : Controller
     {
-        Context context = new Context();
+        ProdutoDAO produtoDAO = new ProdutoDAO();
         // GET: Produto
         public ActionResult Index()
         {
             ViewBag.Data = DateTime.Now;
-            ViewBag.Produtos = context.Produtos.ToList();
+            ViewBag.Produtos = produtoDAO.ListarProdutos();
             return View();
         }
 
@@ -31,38 +32,32 @@ namespace ECommerce.Controllers
                 Preco = Convert.ToDouble(txtPreco),
                 Categoria = txtCategoria
             };
-
-            context.Produtos.Add(produto);
-            context.SaveChanges();
+            produtoDAO.Adicionar(produto);
 
             return RedirectToAction("Index", "Produto");
         }
 
         public ActionResult Remover(int id)
         {
-            context.Produtos.Remove(context.Produtos.Find(id));
-            context.SaveChanges();
+            produtoDAO.Remover(id);
             return RedirectToAction("Index", "Produto");
         }
 
         public ActionResult Alterar(int id)
         {
-            ViewBag.Produto = context.Produtos.Find(id);
+            ViewBag.Produto = produtoDAO.BuscarPorID(id);
             return View();
         }
 
         [HttpPost]
         public ActionResult Alterar(int produtoID, string txtNome, string txtDescricao, string txtPreco, string txtCategoria)
         {
-            Produto produto = context.Produtos.Find(produtoID);
+            Produto produto = produtoDAO.BuscarPorID(produtoID);
             produto.Nome = txtNome;
             produto.Descricao = txtDescricao;
             produto.Preco = Convert.ToDouble(txtPreco);
             produto.Categoria = txtCategoria;
-           
-
-            context.Entry(produto).State = System.Data.Entity.EntityState.Modified;
-            context.SaveChanges();
+            produtoDAO.Atualizar(produto);
 
             return RedirectToAction("Index", "Produto");
         }
