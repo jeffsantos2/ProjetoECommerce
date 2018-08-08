@@ -1,0 +1,37 @@
+﻿@{
+}
+
+@using ECommerce.Models
+@model List<Categoria>
+
+<div>
+    <h1>Gerenciamento de Categorias</h1>
+
+    @Html.ActionLink("Adicionar Categoria", "Cadastrar", "Categoria", null, new { @class = "nav-link" })
+
+    <table class="table table-hover table-striped" style="margin-top:30px">
+        <thead>
+            <tr>
+                <th scope="col">Nome</th>
+                <th scope="col">Descrição</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Categoria categoria in Model)
+            {
+                <tr class="table-active">
+                    <td>@categoria.Nome</td>
+                    <td>@categoria.Descricao</td>
+
+                    <td>@Html.ActionLink("Remover", "Remover", "Categoria", new { id = categoria.CategoriaID }, new { @class = "btn btn-danger" })</td>
+                    <td>@Html.ActionLink("Alterar", "Alterar", "Categoria", new { id = categoria.CategoriaID }, new { @class = "btn btn-warning" })</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <p>Dados atualizados às: <b>@DateTime.Now</b></p>
+
+</div>

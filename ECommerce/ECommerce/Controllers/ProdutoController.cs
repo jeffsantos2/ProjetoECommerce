@@ -1,20 +1,16 @@
 ﻿using ECommerce.DAL;
 using ECommerce.Models;
-using System;
-using System.Linq;
 using System.Web.Mvc;
 
 namespace ECommerce.Controllers
 {
     public class ProdutoController : Controller
     {
-        ProdutoDAO produtoDAO = new ProdutoDAO();
+        private static ProdutoDAO produtoDAO = new ProdutoDAO();
         // GET: Produto
         public ActionResult Index()
         {
-            ViewBag.Data = DateTime.Now;
-            ViewBag.Produtos = produtoDAO.ListarProdutos();
-            return View();
+            return View(produtoDAO.ListarProdutos());
         }
 
         public ActionResult Cadastrar()
@@ -23,18 +19,18 @@ namespace ECommerce.Controllers
         }
 
         [HttpPost]
-        public ActionResult Cadastrar(string txtNome, string txtDescricao, string txtPreco, string txtCategoria)
+        public ActionResult Cadastrar(Produto produto)
         {
-            Produto produto = new Produto
+            if (ModelState.IsValid)
             {
-                Nome = txtNome,
-                Descricao = txtDescricao,
-                Preco = Convert.ToDouble(txtPreco),
-                Categoria = txtCategoria
-            };
-            produtoDAO.Adicionar(produto);
-
-            return RedirectToAction("Index", "Produto");
+                if(produtoDAO.Adicionar(produto)) return RedirectToAction("Index", "Produto");
+                else
+                {
+                    ModelState.AddModelError("", "Já existe um produto com este nome!");
+                    return View(produto);
+                }
+            }
+            return View(produto);
         }
 
         public ActionResult Remover(int id)
@@ -45,19 +41,19 @@ namespace ECommerce.Controllers
 
         public ActionResult Alterar(int id)
         {
-            ViewBag.Produto = produtoDAO.BuscarPorID(id);
-            return View();
+            return View(produtoDAO.BuscarPorID(id));
         }
 
         [HttpPost]
-        public ActionResult Alterar(int produtoID, string txtNome, string txtDescricao, string txtPreco, string txtCategoria)
+        public ActionResult Alterar(Produto produto)
         {
-            Produto produto = produtoDAO.BuscarPorID(produtoID);
-            produto.Nome = txtNome;
-            produto.Descricao = txtDescricao;
-            produto.Preco = Convert.ToDouble(txtPreco);
-            produto.Categoria = txtCategoria;
-            produtoDAO.Atualizar(produto);
+            Produto produtoOriginal = produtoDAO.BuscarPorID(produto.ProdutoID);
+
+            produtoOriginal.Nome = produto.Nome;
+            produtoOriginal.Descricao = produto.Descricao;
+            produtoOriginal.Preco = produto.Preco;
+            produtoOriginal.Categoria = produto.Categoria;
+            produtoDAO.Atualizar(produtoOriginal);
 
             return RedirectToAction("Index", "Produto");
         }

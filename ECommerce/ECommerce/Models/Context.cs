@@ -7,5 +7,6 @@ namespace ECommerce.Models
         public Context() : base("BancoDeDados") { }
 
         public DbSet<Produto> Produtos { get; set; }
+        public DbSet<Categoria> Categorias { get; set; }
     }
 }

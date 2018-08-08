@@ -141,7 +141,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CategoriaController.cs" />
     <Compile Include="Controllers\ProdutoController.cs" />
+    <Compile Include="DAL\CategoriaDAO.cs" />
     <Compile Include="DAL\ProdutoDAO.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -149,6 +151,14 @@
     <Compile Include="Migrations\201807271353278_CriarBanco.cs" />
     <Compile Include="Migrations\201807271353278_CriarBanco.Designer.cs">
       <DependentUpon>201807271353278_CriarBanco.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808071237197_AlterTableProduto.cs" />
+    <Compile Include="Migrations\201808071237197_AlterTableProduto.Designer.cs">
+      <DependentUpon>201808071237197_AlterTableProduto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808071400391_CreateTableCategorias.cs" />
+    <Compile Include="Migrations\201808071400391_CreateTableCategorias.Designer.cs">
+      <DependentUpon>201808071400391_CreateTableCategorias.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Categoria.cs" />
@@ -162,7 +172,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\_viewstart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -170,6 +180,9 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Produto\Alterar.cshtml" />
     <Content Include="Views\Shared\Layout.cshtml" />
+    <Content Include="Views\Categoria\Cadastrar.cshtml" />
+    <Content Include="Views\Categoria\Alterar.cshtml" />
+    <Content Include="Views\Categoria\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -183,6 +196,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201807271353278_CriarBanco.resx">
       <DependentUpon>201807271353278_CriarBanco.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808071237197_AlterTableProduto.resx">
+      <DependentUpon>201808071237197_AlterTableProduto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808071400391_CreateTableCategorias.resx">
+      <DependentUpon>201808071400391_CreateTableCategorias.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
