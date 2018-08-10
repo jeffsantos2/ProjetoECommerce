@@ -1,7 +1,7 @@
 ﻿using ECommerce.Controllers;
 using ECommerce.Models;
-using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 
@@ -32,7 +32,8 @@ namespace ECommerce.DAL
         }
         public void Remover(int id)
         {
-            context.Produtos.Remove(BuscarPorID(id));
+            Produto produto = BuscarPorID(id);
+            context.Produtos.Remove(produto);
             context.SaveChanges();
         }
         public Produto BuscarPorID(int id)

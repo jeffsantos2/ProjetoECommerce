@@ -38,14 +38,13 @@ namespace ECommerce.Controllers
 
                 if (ImagemProduto != null)
                 {
-                    //string nomeImagem = produto.Nome + ".jpg";//Path.GetFileName(ImagemProduto.FileName);
-                    string nomeImagem = Path.GetFileName(ImagemProduto.FileName);
+                    string nomeImagem = produto.Nome + Path.GetExtension(Path.Combine(Server.MapPath("~/Imagens/"), Path.GetFileName(ImagemProduto.FileName)));
                     string caminho = Path.Combine(Server.MapPath("~/Imagens/"), nomeImagem);
 
                     ImagemProduto.SaveAs(caminho);
                     produto.Imagem = nomeImagem;
                 }
-                else produto.Imagem = "SemImagem.png";
+                else produto.Imagem = "SemImagem.jpg";
 
                 produto.Categoria = categoriaDAO.BuscarPorID(Categorias);
                 if(produtoDAO.Adicionar(produto)) return RedirectToAction("Index", "Produto");
