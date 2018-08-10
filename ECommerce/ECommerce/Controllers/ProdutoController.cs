@@ -1,5 +1,7 @@
 ﻿using ECommerce.DAL;
 using ECommerce.Models;
+using System.IO;
+using System.Web;
 using System.Web.Mvc;
 
 namespace ECommerce.Controllers
@@ -15,14 +17,37 @@ namespace ECommerce.Controllers
 
         public ActionResult Cadastrar()
         {
+            CategoriaDAO categoriaDAO = new CategoriaDAO();
+            ViewBag.Categorias = new SelectList(categoriaDAO.ListarCategorias(), "CategoriaID", "Nome");
             return View();
         }
 
         [HttpPost]
-        public ActionResult Cadastrar(Produto produto)
+        public ActionResult Cadastrar(Produto produto, int? Categorias, HttpPostedFileBase ImagemProduto)
         {
+            CategoriaDAO categoriaDAO = new CategoriaDAO();
+            ViewBag.Categorias = new SelectList(categoriaDAO.ListarCategorias(), "CategoriaID", "Nome");
             if (ModelState.IsValid)
             {
+                if(Categorias == null)
+                {
+                    ModelState.AddModelError("", "Você deve selecionar uma categoria!");
+                    return View(produto);
+                }
+
+
+                if (ImagemProduto != null)
+                {
+                    //string nomeImagem = produto.Nome + ".jpg";//Path.GetFileName(ImagemProduto.FileName);
+                    string nomeImagem = Path.GetFileName(ImagemProduto.FileName);
+                    string caminho = Path.Combine(Server.MapPath("~/Imagens/"), nomeImagem);
+
+                    ImagemProduto.SaveAs(caminho);
+                    produto.Imagem = nomeImagem;
+                }
+                else produto.Imagem = "SemImagem.png";
+
+                produto.Categoria = categoriaDAO.BuscarPorID(Categorias);
                 if(produtoDAO.Adicionar(produto)) return RedirectToAction("Index", "Produto");
                 else
                 {

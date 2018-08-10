@@ -1,14 +1,14 @@
-﻿using ECommerce.Models;
-using System;
+﻿using ECommerce.Controllers;
+using ECommerce.Models;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 
 namespace ECommerce.DAL
 {
     public class CategoriaDAO
     {
-        private static Context context = new Context();
+        private static Context context = Singleton.Instance();
+
         public bool Adicionar(Categoria categoria)
         {
             if (BuscarPorNome(categoria) == null)
@@ -33,7 +33,7 @@ namespace ECommerce.DAL
             context.Categorias.Remove(BuscarPorID(id));
             context.SaveChanges();
         }
-        public Categoria BuscarPorID(int id)
+        public Categoria BuscarPorID(int? id)
         {
             return context.Categorias.Find(id);
         }

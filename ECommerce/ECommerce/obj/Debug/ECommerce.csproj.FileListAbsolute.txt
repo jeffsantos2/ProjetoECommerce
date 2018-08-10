@@ -156,3 +156,4 @@ C:\Users\Aluno\Desktop\ECommerce\ECommerce\ECommerce\obj\Debug\ECommerce.dll
 C:\Users\Aluno\Desktop\ECommerce\ECommerce\ECommerce\obj\Debug\ECommerce.pdb
 C:\Users\Aluno\Desktop\ECommerce\ECommerce\ECommerce\obj\Debug\ECommerce.Migrations.AlterTableProduto.resources
 C:\Users\Aluno\Desktop\ECommerce\ECommerce\ECommerce\obj\Debug\ECommerce.Migrations.CreateTableCategorias.resources
+C:\Users\Aluno\Desktop\ECommerce\ECommerce\ECommerce\obj\Debug\ECommerce.Migrations.AddCategoriaTableProduto.resources

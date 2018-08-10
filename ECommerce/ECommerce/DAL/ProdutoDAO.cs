@@ -1,4 +1,5 @@
-﻿using ECommerce.Models;
+﻿using ECommerce.Controllers;
+using ECommerce.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,9 +7,10 @@ using System.Web;
 
 namespace ECommerce.DAL
 {
+
     public class ProdutoDAO
     {
-        private static Context context = new Context();
+        private static Context context = Singleton.Instance();
         public bool Adicionar(Produto produto)
         {
             if(BuscarPorNome(produto) == null)
@@ -26,7 +28,7 @@ namespace ECommerce.DAL
         }
         public List<Produto> ListarProdutos()
         {
-            return context.Produtos.ToList();
+            return context.Produtos.Include("Categoria").ToList();
         }
         public void Remover(int id)
         {

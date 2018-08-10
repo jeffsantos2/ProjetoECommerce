@@ -143,6 +143,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CategoriaController.cs" />
     <Compile Include="Controllers\ProdutoController.cs" />
+    <Compile Include="DAL\Singleton.cs" />
     <Compile Include="DAL\CategoriaDAO.cs" />
     <Compile Include="DAL\ProdutoDAO.cs" />
     <Compile Include="Global.asax.cs">
@@ -159,6 +160,10 @@
     <Compile Include="Migrations\201808071400391_CreateTableCategorias.cs" />
     <Compile Include="Migrations\201808071400391_CreateTableCategorias.Designer.cs">
       <DependentUpon>201808071400391_CreateTableCategorias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808101128527_AddCategoriaTableProduto.cs" />
+    <Compile Include="Migrations\201808101128527_AddCategoriaTableProduto.Designer.cs">
+      <DependentUpon>201808101128527_AddCategoriaTableProduto.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Categoria.cs" />
@@ -192,6 +197,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Imagens\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201807271353278_CriarBanco.resx">
@@ -202,6 +208,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201808071400391_CreateTableCategorias.resx">
       <DependentUpon>201808071400391_CreateTableCategorias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808101128527_AddCategoriaTableProduto.resx">
+      <DependentUpon>201808101128527_AddCategoriaTableProduto.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

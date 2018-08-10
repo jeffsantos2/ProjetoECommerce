@@ -17,9 +17,8 @@ namespace ECommerce.Models
         [Display(Name = "Nome do Produto")]
         public string Nome { get; set; }
 
-        [Required(ErrorMessage = "Campo Obrigatório!")]
         [Display(Name = "Categoria do Produto")]
-        public string Categoria { get; set; }
+        public Categoria Categoria { get; set; }
 
         [Required(ErrorMessage = "Campo Obrigatório!")]
         [Display(Name = "Descrição do Produto")]

@@ -25,7 +25,11 @@
                     <td>@produto.Nome</td>
                     <td>@produto.Descricao</td>
                     <td>R$ @produto.Preco</td>
-                    <td>@produto.Categoria</td>
+                    <td>@produto.Categoria.Nome</td>
+
+                    <td>
+                        <img src="~/Imagens/@produto.Imagem" alt="Imagem do Produto" style="width:100px; height:100px"/>
+                    </td>
 
                     <td>@Html.ActionLink("Remover", "Remover", "Produto", new { id = produto.ProdutoID }, new {@class = "btn btn-danger"})</td>
                     <td>@Html.ActionLink("Alterar", "Alterar", "Produto", new { id = produto.ProdutoID }, new { @class = "btn btn-warning" })</td>
