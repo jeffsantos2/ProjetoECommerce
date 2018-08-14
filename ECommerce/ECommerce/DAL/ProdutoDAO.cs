@@ -36,13 +36,17 @@ namespace ECommerce.DAL
             context.Produtos.Remove(produto);
             context.SaveChanges();
         }
-        public Produto BuscarPorID(int id)
+        public Produto BuscarPorID(int? id)
         {
             return context.Produtos.Find(id);
         }
         public Produto BuscarPorNome(Produto produto)
         {
             return context.Produtos.FirstOrDefault(p => p.Nome.Equals(produto.Nome));
+        }
+        public List<Produto> ListarProdutosPorCategoria(int? categoriaid)
+        {
+            return context.Produtos.Include("Categoria").Where(produto => produto.Categoria.CategoriaID == categoriaid).ToList();
         }
     }
 }

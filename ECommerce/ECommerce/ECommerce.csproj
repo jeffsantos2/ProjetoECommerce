@@ -144,6 +144,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CategoriaController.cs" />
     <Compile Include="Controllers\ProdutoController.cs" />
+    <Compile Include="Controllers\ProdutoHomeController.cs" />
     <Compile Include="DAL\Singleton.cs" />
     <Compile Include="DAL\CategoriaDAO.cs" />
     <Compile Include="DAL\ProdutoDAO.cs" />
@@ -189,6 +190,9 @@
     <Content Include="Views\Categoria\Cadastrar.cshtml" />
     <Content Include="Views\Categoria\Alterar.cshtml" />
     <Content Include="Views\Categoria\Index.cshtml" />
+    <Content Include="Views\ProdutoHome\Index.cshtml" />
+    <Content Include="Views\ProdutoHome\FiltrarCategoria.cshtml" />
+    <Content Include="Views\ProdutoHome\DetalhesProduto.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
