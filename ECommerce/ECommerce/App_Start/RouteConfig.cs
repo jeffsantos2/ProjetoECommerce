@@ -12,7 +12,7 @@ namespace ECommerce
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Produto", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "ProdutoHome", action = "Index", id = UrlParameter.Optional }
             );
         }
     }

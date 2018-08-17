@@ -9,13 +9,16 @@
 <body>
     
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        @Html.ActionLink("ECommerce", "Index", "Produto", null, new { @class = "navbar-brand" })
+        @Html.ActionLink("ECommerce", "Index", "ProdutoHome", null, new { @class = "navbar-brand" })
 
-        @Html.ActionLink("Cadastrar Produto", "Cadastrar", "Produto", null, new { @class = "nav-link" })
+        @Html.ActionLink("Gerenciar Produtos", "Index", "Produto", null, new { @class = "nav-link" })
         @Html.ActionLink("Gerenciar Categorias", "Index", "Categoria", null, new { @class = "nav-link" })
     </nav>
 
-    @RenderBody()
+
+    <div style="text-align:center">
+        @RenderBody()
+    </div>
 
     <hr style="margin-top:30px" />
     <footer style="text-align:center">
