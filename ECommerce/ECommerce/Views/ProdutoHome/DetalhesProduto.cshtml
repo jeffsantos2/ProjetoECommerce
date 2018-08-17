@@ -17,5 +17,7 @@
 
         @Model.Preco <br>
         @Model.Categoria.Nome
+
+        @Html.ActionLink("Adicionar ao Carrinho", "AdicionarAoCarrinho", "ProdutoHome", new { produtoID = Model.ProdutoID }, new { @class = "btn btn-success" })
     </div>
 </div>

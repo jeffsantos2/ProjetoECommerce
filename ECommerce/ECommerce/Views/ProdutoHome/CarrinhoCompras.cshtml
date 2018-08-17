@@ -1,0 +1,45 @@
+﻿@model IEnumerable<ECommerce.Models.ItemVenda>
+
+@{
+    ViewBag.Title = "CarrinhoCompras";
+}
+
+<h2>CarrinhoCompras</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Quantidade)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrecoVenda)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Data)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Quantidade)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PrecoVenda)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Data)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ItemVendaID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ItemVendaID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ItemVendaID })
+        </td>
+    </tr>
+}
+
+</table>
