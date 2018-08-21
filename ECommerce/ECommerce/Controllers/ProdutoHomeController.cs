@@ -25,21 +25,29 @@ namespace ECommerce.Controllers
         public ActionResult AdicionarAoCarrinho(int produtoID)
         {
             Produto produto = produtoDAO.BuscarPorID(produtoID);
-            ItemVenda itemVenda = new ItemVenda
-            {
-                ProdutoVenda = produto,
-                Quantidade = 1,
-                PrecoVenda = produto.Preco,
-                Data = System.DateTime.Now,
-                CarrinhoID = Sessao.RetornarCarrinhoID().ToString()
-            };
+            ItemVenda itemVenda = itemVendaDAO.ItemNoCarrinho(produto);
 
-            itemVendaDAO.Adicionar(itemVenda);
+            if(itemVenda == null)
+            {
+                itemVenda = new ItemVenda();
+                itemVenda.ProdutoVenda = produto;
+                itemVenda.Quantidade = 1;
+                itemVenda.PrecoVenda = produto.Preco;
+                itemVenda.Data = System.DateTime.Now;
+                itemVenda.CarrinhoID = Sessao.RetornarCarrinhoID().ToString();
+                itemVendaDAO.Adicionar(itemVenda);
+            }
+            else
+            {
+                itemVenda.Quantidade++;
+                itemVendaDAO.Atualizar(itemVenda);
+            }
+            
             return RedirectToAction("CarrinhoCompras");
         }
         public ActionResult CarrinhoCompras()
         {
-            return View(itemVendaDAO.ListarItemVenda(Sessao.RetornarCarrinhoID().ToString()));
+            return View(itemVendaDAO.ListarItemVenda());
         }
     }
 }
