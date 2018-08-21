@@ -1,10 +1,11 @@
 ﻿@model IEnumerable<ECommerce.Models.ItemVenda>
 
 @{
-    ViewBag.Title = "CarrinhoCompras";
+    string GuidID = ViewBag.GuidID;
 }
 
 <h2>CarrinhoCompras</h2>
+<h1>@GuidID</h1>
 
 <p>
     @Html.ActionLink("Create New", "Create")

@@ -31,9 +31,9 @@ namespace ECommerce.DAL
             return context.ItensVenda.Find(id);
         }
 
-        public List<ItemVenda> ListarItemVenda()
+        public List<ItemVenda> ListarItemVenda(string CarrinhoID)
         {
-            return context.ItensVenda.ToList();
+            return context.ItensVenda.Where(item => item.CarrinhoID.Equals(CarrinhoID)).ToList();
         }
     }
 }
