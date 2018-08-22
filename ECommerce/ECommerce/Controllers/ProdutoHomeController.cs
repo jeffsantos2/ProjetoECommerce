@@ -47,6 +47,9 @@ namespace ECommerce.Controllers
         }
         public ActionResult CarrinhoCompras()
         {
+            double CustoTotal = 0;
+            foreach(var Item in itemVendaDAO.ListarItemVenda()) CustoTotal += Item.PrecoVenda * Item.Quantidade;
+            ViewBag.Custo = CustoTotal;
             return View(itemVendaDAO.ListarItemVenda());
         }
     }

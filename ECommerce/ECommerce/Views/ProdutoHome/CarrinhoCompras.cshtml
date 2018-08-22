@@ -1,6 +1,7 @@
 ﻿@model List<ECommerce.Models.ItemVenda>
 
 @{
+    double CustoTotal = ViewBag.Custo;
 }
 
 <h2>Carrinho de Compras</h2>
@@ -14,24 +15,31 @@
         <th>Subtotal</th>
     </tr>
 
-@foreach (var item in Model)
-{
-    <tr>
-        <td>
-            <img src="~/Imagens/@item.ProdutoVenda.Imagem" alt="Imagem do Produto" style="width:100px; height:100px" />
-        </td>
+    @foreach(var item in Model)
+    {
+        <tr>
+            <td>
+                <img src="~/Imagens/@item.ProdutoVenda.Imagem" alt="Imagem do Produto" style="width:100px; height:100px" />
+            </td>
 
-        <td>@item.ProdutoVenda.Nome </td>
+            <td>@item.ProdutoVenda.Nome </td>
 
-        <td>@item.Quantidade<br> </td>
+            <td>@item.Quantidade<br> </td>
 
-        <td>@item.PrecoVenda.ToString("C2")</td>
-        @{ 
-            double subtotal = (item.Quantidade * item.PrecoVenda);
-        }
-        
-        <td>@subtotal.ToString("C2")) </td>
-    </tr>
-}
+            <td>@item.PrecoVenda.ToString("C2")</td>
+            @{
+                double subtotal = (item.Quantidade * item.PrecoVenda);
+            }
+
+            <td>@subtotal.ToString("C2")</td>
+        </tr>
+    }
 
 </table>
+
+<div class="card text-white bg-success mb-3" style="max-width: 10rem; border-radius: 3px 3px;">
+    <div class="card-header">Custo Total:</div>
+    <div class="card-body">
+        <p class="card-text">@CustoTotal.ToString("C2")</p>
+    </div>
+</div>

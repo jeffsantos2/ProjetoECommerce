@@ -52,5 +52,6 @@ namespace ECommerce.DAL
             string CarrinhoID = Sessao.RetornarCarrinhoID().ToString();
             return context.ItensVenda.Include("ProdutoVenda").FirstOrDefault(item => item.ProdutoVenda.ProdutoID == produto.ProdutoID && item.CarrinhoID.Equals(CarrinhoID));
         }
+
     }
 }
