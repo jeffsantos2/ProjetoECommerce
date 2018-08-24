@@ -31,12 +31,12 @@ namespace ECommerce.DAL
                 context.SaveChanges();
             }
         }
-        public void Remover(int id)
+        public void Remover(int? id)
         {
             context.ItensVenda.Remove(BuscarPorID(id));
             context.SaveChanges();
         }
-        public ItemVenda BuscarPorID(int id)
+        public ItemVenda BuscarPorID(int? id)
         {
             return context.ItensVenda.Find(id);
         }
@@ -53,5 +53,11 @@ namespace ECommerce.DAL
             return context.ItensVenda.Include("ProdutoVenda").FirstOrDefault(item => item.ProdutoVenda.ProdutoID == produto.ProdutoID && item.CarrinhoID.Equals(CarrinhoID));
         }
 
+        public int RetornarQuantidade()
+        {
+            int TotalItensCarrinho = 0;
+            foreach (var item in ListarItemVenda()) TotalItensCarrinho += item.Quantidade;
+            return TotalItensCarrinho;
+        }
     }
 }

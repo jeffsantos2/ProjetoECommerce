@@ -15,7 +15,12 @@ namespace ECommerce.Controllers
         public ActionResult Index(int? categoriaID)
         {
             ViewBag.Categorias = categoriaDAO.ListarCategorias();
-            if (categoriaID != null) return View(produtoDAO.ListarProdutosPorCategoria(categoriaID));   
+            if (categoriaID != null) return View(produtoDAO.ListarProdutosPorCategoria(categoriaID));
+
+            int? quantidade = 0;
+            foreach(var item in itemVendaDAO.ListarItemVenda()) quantidade += item.Quantidade;
+            ViewBag.TotalItens = quantidade;
+
             return View(produtoDAO.ListarProdutos());
         }
         public ActionResult DetalhesProduto(int? produtoID)
@@ -51,6 +56,48 @@ namespace ECommerce.Controllers
             foreach(var Item in itemVendaDAO.ListarItemVenda()) CustoTotal += Item.PrecoVenda * Item.Quantidade;
             ViewBag.Custo = CustoTotal;
             return View(itemVendaDAO.ListarItemVenda());
+        }
+
+        public ActionResult Remover(int? id)
+        {
+            ItemVenda item = itemVendaDAO.BuscarPorID(id);
+
+            if(item != null)
+            {
+                if (item.Quantidade == 1) itemVendaDAO.Remover(id);
+                else
+                {
+                    item.Quantidade--;
+                    itemVendaDAO.Atualizar(item);
+                }
+            }
+
+            return RedirectToAction("CarrinhoCompras");
+        }
+
+        public ActionResult Reduzir(int? id)
+        {
+            ItemVenda item = itemVendaDAO.BuscarPorID(id);
+
+            if (item != null && item.Quantidade > 1)
+            {
+                item.Quantidade--;
+                itemVendaDAO.Atualizar(item);
+            }
+
+            return RedirectToAction("CarrinhoCompras");
+        }
+        public ActionResult Aumentar(int? id)
+        {
+            ItemVenda item = itemVendaDAO.BuscarPorID(id);
+
+            if (item != null)
+            {
+                item.Quantidade++;
+                itemVendaDAO.Atualizar(item);
+            }
+
+            return RedirectToAction("CarrinhoCompras");
         }
     }
 }

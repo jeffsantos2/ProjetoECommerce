@@ -1,5 +1,12 @@
 ﻿<!DOCTYPE html>
 
+@using ECommerce.DAL
+
+@{ 
+    ItemVendaDAO itemVendaDAO = new ItemVendaDAO();
+    int? TotalItensCarrinho = itemVendaDAO.RetornarQuantidade();
+}
+
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
@@ -13,6 +20,8 @@
 
         @Html.ActionLink("Gerenciar Produtos", "Index", "Produto", null, new { @class = "nav-link" })
         @Html.ActionLink("Gerenciar Categorias", "Index", "Categoria", null, new { @class = "nav-link" })
+
+        @Html.ActionLink("Meu Carrinho" + "(" + @TotalItensCarrinho + ")", "CarrinhoCompras", "ProdutoHome", null, new { @class = "nav-link" })
     </nav>
 
 

@@ -15,7 +15,7 @@
         <th>Subtotal</th>
     </tr>
 
-    @foreach(var item in Model)
+    @foreach (var item in Model)
     {
         <tr>
             <td>
@@ -24,7 +24,11 @@
 
             <td>@item.ProdutoVenda.Nome </td>
 
-            <td>@item.Quantidade<br> </td>
+            <td>
+                @Html.ActionLink("-", "Reduzir", "ProdutoHome", new { id = item.ItemVendaID }, new { @class = "btn btn-danger" })
+                @item.Quantidade
+                @Html.ActionLink("+", "Aumentar", "ProdutoHome", new { id = item.ItemVendaID }, new { @class = "btn btn-success" })
+            </td>
 
             <td>@item.PrecoVenda.ToString("C2")</td>
             @{
@@ -32,12 +36,17 @@
             }
 
             <td>@subtotal.ToString("C2")</td>
+            <td>
+                @Html.ActionLink("Remover", "Remover", "ProdutoHome", new { id = item.ItemVendaID }, null)
+            </td>
         </tr>
+        
+        
     }
 
 </table>
 
-<div class="card text-white bg-success mb-3" style="max-width: 10rem; border-radius: 3px 3px;">
+<div class="card text-white bg-success mb-3" style="max-width: 10rem; border-radius: 3px 3px; right: 10px">
     <div class="card-header">Custo Total:</div>
     <div class="card-body">
         <p class="card-text">@CustoTotal.ToString("C2")</p>
