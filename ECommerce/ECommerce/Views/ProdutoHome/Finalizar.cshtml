@@ -1,0 +1,71 @@
+﻿@{
+    double subtotal;
+    double CustoTotal = ViewBag.Custo;
+}
+@using ECommerce.Models
+
+@model List<ItemVenda>
+
+<h2>Resumo da Compra</h2>
+
+<div>
+
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-sm-2" style="align-items:center">
+
+                <div class="card text-white bg-dark mb-3" style="max-width: 15rem; border-radius: 3px 3px; right: 10px">
+                    <div class="card-header">@item.ProdutoVenda.Nome</div>
+                    <div class="card-body">
+                        <p class="card-text">
+                            @item.PrecoVenda.ToString("C2") x @item.Quantidade
+                            @{
+                                subtotal = (item.Quantidade * item.PrecoVenda);
+                            }
+                            <br>
+                            Subtotal: @subtotal.ToString("C2")
+                        </p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+    <div class="card text-white bg-success mb-3" style="max-width: 10rem; border-radius: 3px 3px; right: 10px">
+        <div class="card-header">Custo Total</div>
+        <div class="card-body">
+            <p class="card-text">@CustoTotal.ToString("C2")</p>
+        </div>
+    </div>
+
+</div>
+
+<div>
+    <h4>Dados Pessoais</h4>
+    <center>
+        @using (Html.BeginForm("Salvar", "ProdutoHome", null, FormMethod.Post, new { @class = "form-horizontal", enctype = "multipart/form-data" }))
+        {
+            <fieldset>
+
+                @Html.Label("Nome do Cliente", new { @class = "form-group"})
+                <div>
+                    @Html.TextBox("nome", "Nome", null, new { @class = "form-control", @placeholder = "Nome" })<br>
+                </div>
+
+                @Html.Label("Endereço do Cliente", new { @class = "form-group" })
+                <div>
+                    @Html.TextBox("end", "Endereço", null, new { @class = "form-control", @placeholder = "Endereço" })<br>
+                </div>
+
+                @Html.Label("Telefone do Cliente", new { @class = "form-group" })
+                <div>
+                    @Html.TextBox("tel", "Telefone", null, new { @class = "form-control", @placeholder = "Telefone" })<br>
+                </div>
+
+                <input type="submit" class="btn btn-success" value="Comprar" />
+
+            </fieldset>
+        }
+    </center>
+</div>

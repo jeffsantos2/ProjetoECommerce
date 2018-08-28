@@ -218,3 +218,4 @@ C:\Users\Aluno\Desktop\ECommerce\ECommerce\ECommerce\obj\Debug\ECommerce.Migrati
 C:\Users\Aluno\Desktop\ECommerce\ECommerce\ECommerce\obj\Debug\ECommerce.Migrations.AddColumnCarrinhoID.resources
 C:\Users\Jeff\Documents\ECommerce\ECommerce\ECommerce\obj\Debug\ECommerce.Migrations.AddTableItemVenda.resources
 C:\Users\Jeff\Documents\ECommerce\ECommerce\ECommerce\obj\Debug\ECommerce.Migrations.AddColumnCarrinhoID.resources
+C:\Users\Aluno\Desktop\ECommerce\ECommerce\ECommerce\obj\Debug\ECommerce.Migrations.CreateCollumn_NomeEnderecoTelefone.resources

@@ -176,6 +176,10 @@
     <Compile Include="Migrations\201808211130501_AddColumnCarrinhoID.Designer.cs">
       <DependentUpon>201808211130501_AddColumnCarrinhoID.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201808281157464_CreateCollumn_NomeEnderecoTelefone.cs" />
+    <Compile Include="Migrations\201808281157464_CreateCollumn_NomeEnderecoTelefone.Designer.cs">
+      <DependentUpon>201808281157464_CreateCollumn_NomeEnderecoTelefone.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Categoria.cs" />
     <Compile Include="Models\Context.cs" />
@@ -203,6 +207,7 @@
     <Content Include="Views\ProdutoHome\Index.cshtml" />
     <Content Include="Views\ProdutoHome\DetalhesProduto.cshtml" />
     <Content Include="Views\ProdutoHome\CarrinhoCompras.cshtml" />
+    <Content Include="Views\ProdutoHome\Finalizar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -231,6 +236,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201808211130501_AddColumnCarrinhoID.resx">
       <DependentUpon>201808211130501_AddColumnCarrinhoID.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808281157464_CreateCollumn_NomeEnderecoTelefone.resx">
+      <DependentUpon>201808281157464_CreateCollumn_NomeEnderecoTelefone.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

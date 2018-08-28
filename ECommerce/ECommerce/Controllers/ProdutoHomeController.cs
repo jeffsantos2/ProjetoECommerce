@@ -12,6 +12,28 @@ namespace ECommerce.Controllers
         CategoriaDAO categoriaDAO = new CategoriaDAO();
         ItemVendaDAO itemVendaDAO = new ItemVendaDAO();
 
+        public ActionResult Finalizar()
+        {
+            double CustoTotal = 0;
+            foreach (var Item in itemVendaDAO.ListarItemVenda()) CustoTotal += Item.PrecoVenda * Item.Quantidade;
+            ViewBag.Custo = CustoTotal;
+            return View(itemVendaDAO.ListarItemVenda());
+        }
+
+        public ActionResult Salvar(string nome, string end, string tel)
+        {
+            Guid guid = Guid.NewGuid();
+            foreach (var item in itemVendaDAO.ListarItemVenda())
+            {
+                item.NomeCliente = nome;
+                item.EnderecoCliente = end;
+                item.TelefoneCliente = tel;
+                item.CarrinhoID = guid.ToString();
+                itemVendaDAO.Atualizar(item);
+            }
+            return RedirectToAction("Index");
+        }
+
         public ActionResult Index(int? categoriaID)
         {
             ViewBag.Categorias = categoriaDAO.ListarCategorias();

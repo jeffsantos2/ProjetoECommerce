@@ -40,8 +40,6 @@
                 @Html.ActionLink("Remover", "Remover", "ProdutoHome", new { id = item.ItemVendaID }, null)
             </td>
         </tr>
-        
-        
     }
 
 </table>
@@ -52,3 +50,5 @@
         <p class="card-text">@CustoTotal.ToString("C2")</p>
     </div>
 </div>
+
+@Html.ActionLink("Finalizar Compra", "Finalizar", "ProdutoHome", null, new { @class = "btn btn-success" })

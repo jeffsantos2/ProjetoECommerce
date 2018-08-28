@@ -17,5 +17,8 @@ namespace ECommerce.Models
         public double PrecoVenda { get; set; }
         public DateTime Data { get; set; }
         public string CarrinhoID { get; set; }
+        public string NomeCliente { get; set; }
+        public string EnderecoCliente { get; set; }
+        public string TelefoneCliente { get; set; }
     }
 }

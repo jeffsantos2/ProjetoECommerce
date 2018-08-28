@@ -11,6 +11,7 @@ namespace ECommerce.DAL
     public class ItemVendaDAO
     {
         private static Context context = Singleton.Instance();
+        private string CarrinhoID = Sessao.RetornarCarrinhoID().ToString();
 
         public bool Adicionar(ItemVenda item)
         {
@@ -43,13 +44,11 @@ namespace ECommerce.DAL
 
         public List<ItemVenda> ListarItemVenda()
         {
-            string CarrinhoID = Sessao.RetornarCarrinhoID().ToString();
             return context.ItensVenda.Include("ProdutoVenda").Where(item => item.CarrinhoID.Equals(CarrinhoID)).ToList();
         }
 
         public ItemVenda ItemNoCarrinho(Produto produto)
         {
-            string CarrinhoID = Sessao.RetornarCarrinhoID().ToString();
             return context.ItensVenda.Include("ProdutoVenda").FirstOrDefault(item => item.ProdutoVenda.ProdutoID == produto.ProdutoID && item.CarrinhoID.Equals(CarrinhoID));
         }
 
