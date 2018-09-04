@@ -32,7 +32,10 @@ namespace ECommerce.DAL
             return contexto.Usuarios.FirstOrDefault(x => x.Email.Equals(usuario.Email));
         }
 
-
+        public Usuario Autenticar(Usuario usuario)
+        {
+            return contexto.Usuarios.FirstOrDefault(x => x.Email.Equals(usuario.Email) && x.Senha.Equals(usuario.Senha));
+        }
         
     }
 }

@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace ECommerce.Controllers
 {
+    [Authorize]
     public class ProdutoController : Controller
     {
         private static ProdutoDAO produtoDAO = new ProdutoDAO();

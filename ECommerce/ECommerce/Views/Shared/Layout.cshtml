@@ -20,7 +20,15 @@
 
         @Html.ActionLink("Gerenciar Produtos", "Index", "Produto", null, new { @class = "nav-link" })
         @Html.ActionLink("Gerenciar Categorias", "Index", "Categoria", null, new { @class = "nav-link" })
-
+        @if (!Request.IsAuthenticated)
+        {
+            @Html.ActionLink("Logar", "Login", "Usuario", null, new { @class = "nav-link" })
+        }
+        else
+        {
+            @Html.ActionLink("Logout", "Logout", "Usuario", null, new { @class = "nav-link" })
+        }
+        
         @Html.ActionLink("Meu Carrinho" + "(" + @TotalItensCarrinho + ")", "CarrinhoCompras", "ProdutoHome", null, new { @class = "nav-link" })
     </nav>
 
