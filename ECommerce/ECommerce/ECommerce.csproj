@@ -145,10 +145,12 @@
     <Compile Include="Controllers\CategoriaController.cs" />
     <Compile Include="Controllers\ProdutoController.cs" />
     <Compile Include="Controllers\ProdutoHomeController.cs" />
+    <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="DAL\ItemVendaDAO.cs" />
     <Compile Include="DAL\Singleton.cs" />
     <Compile Include="DAL\CategoriaDAO.cs" />
     <Compile Include="DAL\ProdutoDAO.cs" />
+    <Compile Include="DAL\UsuarioDAO.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -180,11 +182,16 @@
     <Compile Include="Migrations\201808281157464_CreateCollumn_NomeEnderecoTelefone.Designer.cs">
       <DependentUpon>201808281157464_CreateCollumn_NomeEnderecoTelefone.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201809041140568_AddTableUsuarios.cs" />
+    <Compile Include="Migrations\201809041140568_AddTableUsuarios.Designer.cs">
+      <DependentUpon>201809041140568_AddTableUsuarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Categoria.cs" />
     <Compile Include="Models\Context.cs" />
     <Compile Include="Models\ItemVenda.cs" />
     <Compile Include="Models\Produto.cs" />
+    <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\Sessao.cs" />
   </ItemGroup>
@@ -208,6 +215,8 @@
     <Content Include="Views\ProdutoHome\DetalhesProduto.cshtml" />
     <Content Include="Views\ProdutoHome\CarrinhoCompras.cshtml" />
     <Content Include="Views\ProdutoHome\Finalizar.cshtml" />
+    <Content Include="Views\Usuario\Create.cshtml" />
+    <Content Include="Views\Usuario\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -239,6 +248,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201808281157464_CreateCollumn_NomeEnderecoTelefone.resx">
       <DependentUpon>201808281157464_CreateCollumn_NomeEnderecoTelefone.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809041140568_AddTableUsuarios.resx">
+      <DependentUpon>201809041140568_AddTableUsuarios.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
