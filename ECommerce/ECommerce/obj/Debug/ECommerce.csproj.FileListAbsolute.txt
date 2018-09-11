@@ -278,3 +278,6 @@ C:\Users\Aluno\Desktop\ProjetoEcommerce\ECommerce\ECommerce\obj\Debug\ECommerce.
 C:\Users\Aluno\Desktop\ProjetoEcommerce\ECommerce\ECommerce\obj\Debug\ECommerce.dll
 C:\Users\Aluno\Desktop\ProjetoEcommerce\ECommerce\ECommerce\obj\Debug\ECommerce.pdb
 C:\Users\Aluno\Desktop\ProjetoEcommerce\ECommerce\ECommerce\obj\Debug\ECommerce.Migrations.AddTableUsuarios.resources
+C:\Users\Aluno\Desktop\ProjetoEcommerce\ECommerce\ECommerce\obj\Debug\ECommerce.Migrations.AlterTableUser.resources
+C:\Users\Aluno\Desktop\ProjetoEcommerce\ECommerce\ECommerce\bin\Newtonsoft.Json.dll
+C:\Users\Aluno\Desktop\ProjetoEcommerce\ECommerce\ECommerce\bin\Newtonsoft.Json.xml
