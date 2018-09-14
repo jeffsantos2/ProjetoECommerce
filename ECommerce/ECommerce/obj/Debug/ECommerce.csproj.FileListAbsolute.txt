@@ -281,3 +281,10 @@ C:\Users\Aluno\Desktop\ProjetoEcommerce\ECommerce\ECommerce\obj\Debug\ECommerce.
 C:\Users\Aluno\Desktop\ProjetoEcommerce\ECommerce\ECommerce\obj\Debug\ECommerce.Migrations.AlterTableUser.resources
 C:\Users\Aluno\Desktop\ProjetoEcommerce\ECommerce\ECommerce\bin\Newtonsoft.Json.dll
 C:\Users\Aluno\Desktop\ProjetoEcommerce\ECommerce\ECommerce\bin\Newtonsoft.Json.xml
+C:\Users\Jeff\Documents\ECommerce\ECommerce\ECommerce\bin\Newtonsoft.Json.dll
+C:\Users\Jeff\Documents\ECommerce\ECommerce\ECommerce\bin\Newtonsoft.Json.xml
+C:\Users\Jeff\Documents\ECommerce\ECommerce\ECommerce\obj\Debug\ECommerce.Migrations.CreateCollumn_NomeEnderecoTelefone.resources
+C:\Users\Jeff\Documents\ECommerce\ECommerce\ECommerce\obj\Debug\ECommerce.Migrations.AddTableUsuarios.resources
+C:\Users\Jeff\Documents\ECommerce\ECommerce\ECommerce\obj\Debug\ECommerce.Migrations.AlterTableUser.resources
+C:\Users\Jeff\Documents\ECommerce\ECommerce\ECommerce\obj\Debug\ECommerce.Migrations.AlterColumnLocalidadeToCidade.resources
+C:\Users\Jeff\Documents\ECommerce\ECommerce\ECommerce\obj\Debug\ECommerce.Migrations.AlterColumnUFToEstado.resources

@@ -38,9 +38,9 @@ namespace ECommerce.Models
         [Display(Name = "Bairro do usuário")]
         public string Bairro { get; set; }
         [Display(Name = "Cidade do usuário")]
-        public string Localidade { get; set; }
+        public string Cidade { get; set; }
         [Display(Name = "Estado do usuário")]
-        public string UF { get; set; }
+        public string Estado { get; set; }
         
 
     }

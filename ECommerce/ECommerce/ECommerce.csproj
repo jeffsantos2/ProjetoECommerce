@@ -194,6 +194,14 @@
     <Compile Include="Migrations\201809111224425_AlterTableUser.Designer.cs">
       <DependentUpon>201809111224425_AlterTableUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201809142127459_AlterColumnLocalidadeToCidade.cs" />
+    <Compile Include="Migrations\201809142127459_AlterColumnLocalidadeToCidade.Designer.cs">
+      <DependentUpon>201809142127459_AlterColumnLocalidadeToCidade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809142136034_AlterColumnUFToEstado.cs" />
+    <Compile Include="Migrations\201809142136034_AlterColumnUFToEstado.Designer.cs">
+      <DependentUpon>201809142136034_AlterColumnUFToEstado.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Categoria.cs" />
     <Compile Include="Models\Context.cs" />
@@ -263,6 +271,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201809111224425_AlterTableUser.resx">
       <DependentUpon>201809111224425_AlterTableUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809142127459_AlterColumnLocalidadeToCidade.resx">
+      <DependentUpon>201809142127459_AlterColumnLocalidadeToCidade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809142136034_AlterColumnUFToEstado.resx">
+      <DependentUpon>201809142136034_AlterColumnUFToEstado.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

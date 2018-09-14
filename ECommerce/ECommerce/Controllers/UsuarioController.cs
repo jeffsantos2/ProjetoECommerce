@@ -82,10 +82,11 @@ namespace ECommerce.Controllers
             try
             {
                 //consultar o cep
-                string url = "https://viacep.com.br/ws/" + usuario.CEP + "/json/";
+                //string url = "https://viacep.com.br/ws/" + usuario.CEP + "/json/";
                 //string url = "http://apps.widenet.com.br/busca-cep/api/cep/" + usuario.CEP + ".json";
 
                 //string url = "https://buscarcep.com.br/?cep=" + usuario.CEP + "&formato=string&chave=Chave_Gratuita_BuscarCep";
+                string url = "http://api.postmon.com.br/v1/cep/" + usuario.CEP;
 
 
                 WebClient client = new WebClient();
