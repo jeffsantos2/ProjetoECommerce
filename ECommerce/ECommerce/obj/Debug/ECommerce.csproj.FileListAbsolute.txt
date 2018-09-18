@@ -288,3 +288,15 @@ C:\Users\Jeff\Documents\ECommerce\ECommerce\ECommerce\obj\Debug\ECommerce.Migrat
 C:\Users\Jeff\Documents\ECommerce\ECommerce\ECommerce\obj\Debug\ECommerce.Migrations.AlterTableUser.resources
 C:\Users\Jeff\Documents\ECommerce\ECommerce\ECommerce\obj\Debug\ECommerce.Migrations.AlterColumnLocalidadeToCidade.resources
 C:\Users\Jeff\Documents\ECommerce\ECommerce\ECommerce\obj\Debug\ECommerce.Migrations.AlterColumnUFToEstado.resources
+C:\Users\Aluno\Desktop\ECommerce\ECommerce\ECommerce\bin\Newtonsoft.Json.dll
+C:\Users\Aluno\Desktop\ECommerce\ECommerce\ECommerce\bin\System.Net.Http.Formatting.dll
+C:\Users\Aluno\Desktop\ECommerce\ECommerce\ECommerce\bin\System.Web.Http.dll
+C:\Users\Aluno\Desktop\ECommerce\ECommerce\ECommerce\bin\System.Web.Http.WebHost.dll
+C:\Users\Aluno\Desktop\ECommerce\ECommerce\ECommerce\bin\Newtonsoft.Json.xml
+C:\Users\Aluno\Desktop\ECommerce\ECommerce\ECommerce\bin\System.Net.Http.Formatting.xml
+C:\Users\Aluno\Desktop\ECommerce\ECommerce\ECommerce\bin\System.Web.Http.xml
+C:\Users\Aluno\Desktop\ECommerce\ECommerce\ECommerce\bin\System.Web.Http.WebHost.xml
+C:\Users\Aluno\Desktop\ECommerce\ECommerce\ECommerce\obj\Debug\ECommerce.Migrations.AddTableUsuarios.resources
+C:\Users\Aluno\Desktop\ECommerce\ECommerce\ECommerce\obj\Debug\ECommerce.Migrations.AlterTableUser.resources
+C:\Users\Aluno\Desktop\ECommerce\ECommerce\ECommerce\obj\Debug\ECommerce.Migrations.AlterColumnLocalidadeToCidade.resources
+C:\Users\Aluno\Desktop\ECommerce\ECommerce\ECommerce\obj\Debug\ECommerce.Migrations.AlterColumnUFToEstado.resources
